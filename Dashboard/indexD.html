@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador
+    </title>
+    <!--BootStrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Hoja de estilos-->
+        <link rel="stylesheet" href="style.css">
+<!--DataTable-->
+        <link rel="stylesheet" href="https://cdn.datatables.net/3.1.2/css/dataTables.bootstrap5.min.css">
+<link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        <!-- Inicio sección logo-->
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <h2><img src="imgs/LogoVeterinaria.png" alt="logo veterinaira"><span
+                            class="veterinaria">ANIMALADA´S</span></h2>
+                    <div class="close" id="close_btn">
+                        <span class="material-symbols-rounded"> close </span>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin del top-->
+
+            <nav id="sidebar">
+
+                <a href="#" data-section="panel">
+                    <span class="material-symbols-rounded">
+                        space_dashboard
+                    </span>
+                    <h3>Panel</h3>
+                </a>
+
+                <a href="#" data-section="agenda">
+                    <span class="material-symbols-rounded">
+                        calendar_clock
+                    </span>
+                    <h3>Agenda</h3>
+                </a>
+
+                <a href="#" data-section="analiticas">
+                    <span class="material-symbols-rounded">
+                        analytics
+                    </span>
+                    <h3>Analíticas</h3>
+                </a>
+
+                <a href="#" data-section="servicios">
+                    <span class="material-symbols-rounded">
+                        medical_information
+                    </span>
+                    <h3>Servicios</h3>
+                </a>
+
+                <div class="dropdown usuarios-dropdown">
+                    <a href="#" class="usuarios-toggle dropdown-toggle" data-bs-toggle="dropdown"
+                        data-bs-display="static" aria-expanded="false">
+                        <span class="material-symbols-rounded">person</span>
+                        <h3>Usuarios</h3>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-section="clientes">Clientes</a></li>
+                        <li><a class="dropdown-item" href="#" data-section="empleados">Empleados</a></li>
+                    </ul>
+                </div>
+
+                <a href="#" data-section="mascotas">
+                    <span class="material-symbols-rounded">
+                        pets
+                    </span>
+                    <h3>Mascotas</h3>
+                </a>
+
+                <a href="#" data-section="productos">
+                    <span class="material-symbols-rounded">
+                        local_mall
+                    </span>
+                    <h3>Productos</h3>
+                </a>
+
+                <a href="#" data-section="reportes">
+                    <span class="material-symbols-rounded">
+                        breaking_news
+                    </span>
+                    <h3>Reportes</h3>
+                </a>
+
+                <a href="#" data-section="logout">
+                    <span class="material-symbols-rounded">
+                        logout
+                    </span>
+                    <h3>Cerrar Sesión</h3>
+                </a>
+
+
+
+            </nav>
+
+
+        </aside>
+        <!-- Final seccíon del costado-->
+
+
+        <!-- Inicio sección principal-->
+        <main>
+            <section id="panel" class="main-section active">
+                <h1>Panel</h1>
+
+                <div class="date">
+                    <input type="date">
+                </div>
+
+                <div class="insights">
+                    <!-- Inicio Vender-->
+                    <div class="ventas">
+                        <span class="material-symbols-rounded">
+                            trending_up
+                        </span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Ventas totales</h3>
+                                <h1>$41,433</h1>
+                            </div>
+                            <div class="progress">
+                                <svg>
+                                    <circle r="30" cy="40" cx="40"> </circle>
+                                </svg>
+                                <div class="number"> 80%</div>
+                            </div>
+                        </div>
+                        <small>Ultimas 24 Horas</small>
+                    </div>
+
+                    <!-- Fin Vender-->
+
+                    <!-- Inicio Gastos-->
+                    <div class="gastos">
+                        <span class="material-symbols-rounded">
+                            local_mall
+                        </span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Gastos totales</h3>
+                                <h1>$999</h1>
+                            </div>
+                            <div class="progress">
+                                <svg>
+                                    <circle r="30" cy="40" cx="40"> </circle>
+                                </svg>
+                                <div class="number"> 80%</div>
+                            </div>
+                        </div>
+                        <small>Ultimas 24 Horas</small>
+                    </div>
+
+                    <!-- Fin Gastos-->
+
+                    <!-- Inicio Ganancias-->
+                    <div class="ganancias">
+                        <span class="material-symbols-rounded">
+                            paid
+                        </span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Ganancias</h3>
+                                <h1>$32,046</h1>
+                            </div>
+                            <div class="progress">
+                                <svg>
+                                    <circle r="30" cy="40" cx="40"> </circle>
+                                </svg>
+                                <div class="number"> 80%</div>
+                            </div>
+                        </div>
+                        <small>Ultimas 24 Horas</small>
+                    </div>
+
+                    <!-- Fin Ganancias-->
+                </div>
+                <!-- Fin insides-->
+
+                <!-- Inicio Compras recientes-->
+                <div class="recient_order">
+                    <h1>Compras recientes</h1>
+                    <table>
+
+
+                        <thead>
+                            <tr>
+                                <th><!-- Imagen--></th>
+                                <th>Nombre del Producto</th>
+                                <th>Cantidad</th>
+                                <th>Monto</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td><img class="imagen-producto"
+                                        src="https://www.shutterstock.com/shutterstock/photos/106914167/display_1500/stock-photo-under-construction-d-little-human-character-the-builder-sitting-with-a-laptop-side-view-people-106914167.jpg"
+                                        alt="En contrucción"></td>
+                                <td>Croquetas</td>
+                                <td>1</td>
+                                <td>$350</td>
+                                <td class="warning"> Completado</td>
+                                <td class="primary">Detallles</td>
+                            </tr>
+
+                            <tr>
+                                <td><img class="imagen-producto"
+                                        src="https://www.shutterstock.com/shutterstock/photos/106914167/display_1500/stock-photo-under-construction-d-little-human-character-the-builder-sitting-with-a-laptop-side-view-people-106914167.jpg"
+                                        alt="En contrucción"></td>
+                                <td>Croquetas</td>
+                                <td>1</td>
+                                <td>$350</td>
+                                <td class="warning"> Completado</td>
+                                <td class="primary">Detallles</td>
+                            </tr>
+
+                            <tr>
+                                <td><img class="imagen-producto"
+                                        src="https://www.shutterstock.com/shutterstock/photos/106914167/display_1500/stock-photo-under-construction-d-little-human-character-the-builder-sitting-with-a-laptop-side-view-people-106914167.jpg"
+                                        alt="En contrucción"></td>
+                                <td>Croquetas</td>
+                                <td>1</td>
+                                <td>$350</td>
+                                <td class="warning"> Completado</td>
+                                <td class="primary">Detallles</td>
+                            </tr>
+
+                            <tr>
+                                <td><img class="imagen-producto"
+                                        src="https://www.shutterstock.com/shutterstock/photos/106914167/display_1500/stock-photo-under-construction-d-little-human-character-the-builder-sitting-with-a-laptop-side-view-people-106914167.jpg"
+                                        alt="En contrucción"></td>
+                                <td>Croquetas</td>
+                                <td>1</td>
+                                <td>$350</td>
+                                <td class="warning"> Completado</td>
+                                <td class="primary">Detallles</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+
+
+                <!-- Fin Compras recientes-->
+            </section>
+            <!-- Fin sección Panel-->
+
+            <section id="agenda" class="main-section">
+                <h1>Agenda</h1>
+                <p>Acá vas a poder ver y gestionar los turnos programados de la veterinaria.</p>
+            </section>
+
+            <section id="analiticas" class="main-section">
+                <h1>Analíticas</h1>
+                <p>Estadísticas y métricas del negocio (ventas, servicios más solicitados, etc.).</p>
+            </section>
+
+            <section id="servicios" class="main-section">
+                <h1>Servicios</h1>
+                <p>Listado de servicios ofrecidos: consultas, laboratorio, peluquería, cirugías, internación.</p>
+            </section>
+
+            <section id="clientes" class="main-section">
+                <h1>Clientes</h1>
+                <p>Administración de clientes de la veterinaria.</p>
+                <div class="table-responsive">
+                    <table id="datatable_usuarios" class="table"> 
+                        <thead>
+                            <tr>
+                                <th >#</th>
+                                <th >Nombre</th>
+                                <th >Email</th>
+                                <th >Ciudad</th>
+                                <th >Companía</th>
+                                <th> Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody_usuarios">
+
+                        </tbody>
+                    </table>
+                    </div>
+            </section>
+
+            <section id="empleados" class="main-section">
+                <h1>Empleados</h1>
+                <p>Administración del personal de la veterinaria.</p>
+            </section>
+
+            <section id="mascotas" class="main-section">
+                <h1>Mascotas</h1>
+                <p>Registro de mascotas, historial clínico y datos de sus dueños.</p>
+            </section>
+
+            <section id="productos" class="main-section">
+                <h1>Productos</h1>
+                <p>Control de stock y catálogo de productos del Pet Shop.</p>
+            </section>
+
+            <section id="reportes" class="main-section">
+                <h1>Reportes</h1>
+                <p>Reportes generados por el sistema.</p>
+            </section>
+        </main>
+        <!-- Final sección principal-->
+
+        <!--  Inicio sección derecha-->
+        <div class="right">
+            <div class="top">
+
+                <button id="menu_bar">
+                    <span class="material-symbols-rounded">
+                        menu
+                    </span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-symbols-rounded active">
+                        light_mode
+                    </span>
+                    <span class="material-symbols-rounded">
+                        dark_mode
+                    </span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p><b>KAT0</b></p>
+                        <p>Admin</p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="imgs/Designer (1).png" alt="Foto de perfil">
+                    </div>
+                </div>
+            </div>
+            <!--Termina el top-->
+
+            <!-- Inicio reportes recientes-->
+            <div class="reportes-recientes">
+                <h2>Reportes receientes</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="https://media.tenor.com/4DgzaemGVRIAAAAM/void-eyes.gif" alt="foto de perfil-2">
+                        </div>
+                        <div class="message">
+                            <p><b>Inti</b>Lo detuvo la policia en 18 de julio</p>
+                        </div>
+                    </div>
+
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="https://media.tenor.com/4DgzaemGVRIAAAAM/void-eyes.gif" alt="foto de perfil-2">
+                        </div>
+                        <div class="message">
+                            <p><b>Inti</b>Secuestró a Pedro picapiedra</p>
+                        </div>
+                    </div>
+
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="https://media.tenor.com/4DgzaemGVRIAAAAM/void-eyes.gif" alt="foto de perfil-2">
+                        </div>
+                        <div class="message">
+                            <p><b>Inti</b>Atendió a Pedro picapiedra</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Fin reportes recientes-->
+
+            <!--Inicio Analítica de ventas-->
+            <div class="analitica-ventas">
+                <h2>Analítica de ventas</h2>
+
+                <div class="item">
+                    <div class="icon">
+                        <span class="material-symbols-rounded">
+                            trolley
+                        </span>
+                    </div>
+
+                    <div class="right_text">
+                        <div class="info">
+                            <h3>Ventas Online</h3>
+                            <small class="text-muted"> Ultimo Visto en 2 horas</small>
+                        </div>
+                        <h5 class="danger">-17%</h5>
+                        <h3>3849</h3>
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <div class="icon">
+                        <span class="material-symbols-rounded">
+                            trolley
+                        </span>
+                    </div>
+
+                    <div class="right_text">
+                        <div class="info">
+                            <h3>Ventas Online</h3>
+                            <small class="text-muted"> Ultimo Visto en 2 horas</small>
+                        </div>
+                        <h5 class="danger">-17%</h5>
+                        <h3>3849</h3>
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <div class="icon">
+                        <span class="material-symbols-rounded">
+                            trolley
+                        </span>
+                    </div>
+
+                    <div class="right_text">
+                        <div class="info">
+                            <h3>Ventas Online</h3>
+                            <small class="text-muted"> Ultimo Visto en 2 horas</small>
+                        </div>
+                        <h5 class="danger">-17%</h5>
+                        <h3>3849</h3>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <!--Fin Analítica de ventas-->
+            <div class="añadir_productos">
+                <div>
+                    <span class="material-symbols-rounded">
+                        add_2
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!--  Final sección derecha-->
+
+    </div>
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+<!-- DataTables -->
+<script src="https://cdn.datatables.net/3.1.2/js/dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/3.1.2/js/dataTables.bootstrap5.min.js"></script>
+
+<!-- Tu JS -->
+<script src="script.js"></script>
+</body>
+
+</html>
