@@ -11,7 +11,7 @@ const dataTableOptions={
     {with: "10%", targets:[0]}
 
 ],
-    pageLength: 4,
+    pageLength: 5,
     destroy: true,
     language: {
         lengthMenu: "Mostrar _MENU_ registros por página",
@@ -166,3 +166,57 @@ window.addEventListener("resize", () => {
         sideMenu.classList.remove("mobile-open");
     }
 });
+
+const departamentoSelect = document.querySelector("#clienteDepartamento");
+const departamentoToggle = document.querySelector("#clienteDepartamentoToggle");
+const departamentoMenu = document.querySelector("#clienteDepartamentoMenu");
+const departamentoSearch = document.querySelector("#buscarDepartamento");
+const departamentoNoResults = document.querySelector("#departamentoSinResultados");
+
+if (departamentoSelect && departamentoToggle && departamentoMenu && departamentoSearch) {
+    Array.from(departamentoSelect.options).forEach(option => {
+        if (!option.value) return;
+
+        const item = document.createElement("button");
+        item.type = "button";
+        item.className = "dropdown-item";
+        item.textContent = option.textContent;
+        item.addEventListener("click", () => {
+            departamentoSelect.value = option.value;
+            departamentoSelect.dispatchEvent(new Event("change", { bubbles: true }));
+            bootstrap.Dropdown.getOrCreateInstance(departamentoToggle).hide();
+        });
+
+        const listItem = document.createElement("li");
+        listItem.append(item);
+        departamentoMenu.append(listItem);
+    });
+
+    const departamentoItems = Array.from(departamentoMenu.querySelectorAll(".dropdown-item"));
+    const normalizeText = text => text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es");
+    const filterDepartamentos = () => {
+        const query = normalizeText(departamentoSearch.value.trim());
+        let visibleCount = 0;
+
+        departamentoItems.forEach(item => {
+            const matches = normalizeText(item.textContent).includes(query);
+            item.closest("li").hidden = !matches;
+            if (matches) visibleCount++;
+        });
+
+        if (departamentoNoResults) {
+            departamentoNoResults.classList.toggle("d-none", visibleCount > 0);
+        }
+    };
+
+    departamentoSearch.addEventListener("input", filterDepartamentos);
+    departamentoToggle.addEventListener("shown.bs.dropdown", () => departamentoSearch.focus());
+    departamentoToggle.addEventListener("hidden.bs.dropdown", () => {
+        departamentoSearch.value = "";
+        filterDepartamentos();
+    });
+
+    departamentoSelect.addEventListener("change", () => {
+        departamentoToggle.textContent = departamentoSelect.selectedOptions[0].textContent;
+    });
+}

@@ -11,10 +11,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!-- Hoja de estilos-->
-        <link rel="stylesheet" href="style.css">
-<!--DataTable-->
-        <link rel="stylesheet" href="https://cdn.datatables.net/3.1.2/css/dataTables.bootstrap5.min.css">
-<link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <!--DataTable-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/3.1.2/css/dataTables.bootstrap5.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
@@ -282,22 +282,116 @@
                 <h1>Clientes</h1>
                 <p>Administración de clientes de la veterinaria.</p>
                 <div class="table-responsive">
-                    <table id="datatable_usuarios" class="table"> 
+                    <table id="datatable_usuarios" class="table">
                         <thead>
                             <tr>
-                                <th >#</th>
-                                <th >Nombre</th>
-                                <th >Email</th>
-                                <th >Ciudad</th>
-                                <th >Companía</th>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Ciudad</th>
+                                <th>Companía</th>
                                 <th> Opciones</th>
                             </tr>
                         </thead>
-                        <tbody id="tableBody_usuarios">
+                        <tbody id="tableBody_usuarios" class="table-body">
+                            <!-- Aquí se llenará dinámicamente con JavaScript -->
 
                         </tbody>
                     </table>
-                    </div>
+                </div>
+                <div class="mt-4">
+                    <h2 class="fs-5 mb-3">Agregar cliente</h2>
+                    <form>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteCi">Cédula</label>
+                            <input type="text" class="form-control" id="clienteCi" name="ci" placeholder="Cédula"
+                                aria-label="Cédula" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteNombre">Nombre</label>
+                            <input type="text" class="form-control" id="clienteNombre" name="nombre"
+                                placeholder="Nombre" aria-label="Nombre" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteApellido">Apellido</label>
+                            <input type="text" class="form-control" id="clienteApellido" name="apellido"
+                                placeholder="Apellido" aria-label="Apellido" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteTelefono">Teléfono</label>
+                            <input type="text" class="form-control" id="clienteTelefono" name="telefono"
+                                placeholder="Teléfono*" aria-label="Teléfono" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteDireccion">Dirección</label>
+                            <input type="text" class="form-control" id="clienteDireccion" name="direccion"
+                                placeholder="Dirección" aria-label="Dirección" required>
+                        </div>
+                        <div class="input-group mb-3 dropdown departamento-dropdown">
+                            <select class="visually-hidden" id="clienteDepartamento" name="departamento"
+                                aria-label="Departamento" required>
+                                <option value="" selected disabled>Departamento</option>
+                                <option value="Artigas">Artigas</option>
+                                <option value="Canelones">Canelones</option>
+                                <option value="Cerro Largo">Cerro Largo</option>
+                                <option value="Colonia">Colonia</option>
+                                <option value="Durazno">Durazno</option>
+                                <option value="Flores">Flores</option>
+                                <option value="Florida">Florida</option>
+                                <option value="Lavalleja">Lavalleja</option>
+                                <option value="Maldonado">Maldonado</option>
+                                <option value="Montevideo">Montevideo</option>
+                                <option value="Paysandú">Paysandú</option>
+                                <option value="Río Negro">Río Negro</option>
+                                <option value="Rivera">Rivera</option>
+                                <option value="Rocha">Rocha</option>
+                                <option value="Salto">Salto</option>
+                                <option value="San José">San José</option>
+                                <option value="Soriano">Soriano</option>
+                                <option value="Tacuarembó">Tacuarembó</option>
+                                <option value="Treinta y Tres">Treinta y Tres</option>
+                            </select>
+                            <button class="form-select text-start" type="button" id="clienteDepartamentoToggle"
+                                data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"
+                                data-bs-auto-close="outside" aria-controls="clienteDepartamentoMenu">
+                                Departamento
+                            </button>
+                            <ul class="dropdown-menu" id="clienteDepartamentoMenu"
+                                aria-labelledby="clienteDepartamentoToggle">
+                                <li class="departamento-search-item">
+                                    <input type="search" class="form-control form-control-sm" id="buscarDepartamento"
+                                        placeholder="Buscar departamento" aria-label="Buscar departamento"
+                                        autocomplete="off">
+                                </li>
+                                <li id="departamentoSinResultados" class="dropdown-item-text d-none">
+                                    Sin resultados
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteContrasena">Contraseña</label>
+                            <input type="password" class="form-control" id="clienteContrasena" name="contrasena"
+                                placeholder="Contraseña" aria-label="Contraseña" autocomplete="new-password" required>
+                        </div>
+                        <div class="input-group">
+
+                            <label class="visually-hidden" for="clienteGmail">Gmail</label>
+                            <input type="email" class="form-control" id="clienteGmail" name="gmail" placeholder="Gmail"
+                                aria-label="Gmail" autocomplete="email" required>
+                            <span class="input-group-text" id="basic-addon2">@ejemplo.com</span>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                            <label class="form-check-label" for="checkDefault">
+                                Mascota
+                            </label>
+                        </div>
+
+
+                        <button type="button" class="btn btn-primary mt-3">Agregar cliente</button>
+                    </form>
+                </div>
             </section>
 
             <section id="empleados" class="main-section">
@@ -464,20 +558,20 @@
 
     </div>
 
-<!-- jQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
 
-<!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 
-<!-- DataTables -->
-<script src="https://cdn.datatables.net/3.1.2/js/dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/3.1.2/js/dataTables.bootstrap5.min.js"></script>
+    <!-- DataTables -->
+    <script src="https://cdn.datatables.net/3.1.2/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/3.1.2/js/dataTables.bootstrap5.min.js"></script>
 
-<!-- Tu JS -->
-<script src="script.js"></script>
+    <!-- Tu JS -->
+    <script src="script.js"></script>
 </body>
 
 </html>

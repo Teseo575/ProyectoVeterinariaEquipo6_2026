@@ -7,7 +7,7 @@
 /*Variables para reutilizar*/
 :root {
     --clr-veterinaria: #02A2EC;
-    --clr-principal: #7380ec;
+    --clr-principal: #02A2EC;
     --clr-peligro: #ff7782;
     --clr-exito: #41f1b6;
     --clr-blanco: #fff;
@@ -235,20 +235,20 @@ aside #sidebar a span {
 
 }
 
-aside #sidebar > a:last-child {
+aside #sidebar>a:last-child {
     position: absolute;
     bottom: 1rem;
     width: 100%;
 }
 
-aside #sidebar > a.active {
+aside #sidebar>a.active {
     background: var(--clr-claro);
     color: var(--clr-principal);
     margin-left: 0;
     border-left: 5px solid var(--clr-principal);
 }
 
-aside #sidebar > a.active::before {
+aside #sidebar>a.active::before {
     content: '';
     width: 6px;
     height: 100%;
@@ -330,7 +330,7 @@ Empieza el estilo de la sección principal MAIN
 ****************************************/
 
 
-.centered{
+.centered {
     text-align: center !important;
     vertical-align: middle !important;
 }
@@ -355,6 +355,53 @@ main input {
     outline: 0;
     color: var(--clr-oscuro);
 }
+
+.departamento-dropdown .dropdown-menu {
+    max-height: 12rem;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.departamento-dropdown .departamento-search-item {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--bs-dropdown-bg);
+}
+/* **********************
+   Formulario/Check list 
+************************* */
+#clientes .table-responsive .material-symbols-rounded {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+.mt-4{
+    margin-left: 1.3rem;
+    
+}
+.mt-4 .form-check .form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+}
+
+.mt-4 .form-check .form-check-label {
+    margin-top: 0.5rem;
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+    width: 100%;
+    caret-color: var(--clr-info-oscuro);
+}
+
+#checkDefault:checked {
+    background-color: var(--clr-principal);
+    border-color: var(--clr-principal);
+}
+/* **********************
+ Formulario/Check list FIN
+************************* */
 
 main .date {
     display: inline-block;
@@ -517,12 +564,12 @@ main .recient_order a {
 }
 
 /* Inicio estilos de Clientes */
-#clientes > p {
+#clientes>p {
     color: var(--clr-variante-oscura);
     margin: 0.5rem 0 1rem;
 }
 
-#clientes > .btn {
+#clientes>.btn {
     display: block;
     margin: 0 0 1rem auto;
 }
@@ -544,6 +591,7 @@ main .recient_order a {
 #clientes .table th {
     white-space: nowrap;
 }
+
 /* Fin estilos de Clientes */
 
 
@@ -724,7 +772,7 @@ Query de Media
         overflow-wrap: anywhere;
     }
 
-    aside #sidebar > a:last-child {
+    aside #sidebar>a:last-child {
         position: relative;
         margin-top: 1.8rem;
     }
