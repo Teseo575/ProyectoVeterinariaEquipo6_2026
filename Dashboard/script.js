@@ -3,30 +3,10 @@ let dataTable
 let dataTableIsInitialized=false;
 
 const dataTableOptions={
-    // scrollX:"2000px",
-    columnDefs:[
-        {className:"centered", targets: [1,2,3,4,5]},
-        {searcheable:false, targets:[2,3,4,5]},
-    {orderable: false, targets:[5]},
-    {with: "10%", targets:[0]}
-
-],
-    pageLength: 5,
-    destroy: true,
+    pageLength:15,
+    destroy:true,
     language: {
-        lengthMenu: "Mostrar _MENU_ registros por página",
-        zeroRecords: "Ningún usuario encontrado",
-        info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ registros",
-        infoEmpty: "Ningún usuario encontrado",
-        infoFiltered: "(filtrados desde _MAX_ registros totales)",
-        search: "Buscar:",
-        loadingRecords: "Cargando...",
-        paginate: {
-            first: "Primero",
-            last: "Último",
-            next: "Siguiente",
-            previous: "Anterior"
-        }
+        
     }
 };
 
@@ -62,19 +42,7 @@ const listUsr = async () => {
                 <td>${user.name}</td>
                 <td>${user.email}</td>
                 <td>${user.address.city}</td>
-                <td>${user.company.name} </td>
-                <td>
-                <button class="btn btn-sm btn-primary"> <span class="material-symbols-rounded">
-edit_square
-</span></button>
-                <button class="btn btn-sm btn-danger"> <span class="material-symbols-rounded">
-delete_forever
-</span> </button>
-                </td>
-edit_square
-</span> <span class="material-symbols-rounded" style="color: red">
-delete_forever
-</span></td>
+                <td>${user.company.name}</td>
                 
             </tr>
         `).join("");
@@ -166,57 +134,3 @@ window.addEventListener("resize", () => {
         sideMenu.classList.remove("mobile-open");
     }
 });
-
-const departamentoSelect = document.querySelector("#clienteDepartamento");
-const departamentoToggle = document.querySelector("#clienteDepartamentoToggle");
-const departamentoMenu = document.querySelector("#clienteDepartamentoMenu");
-const departamentoSearch = document.querySelector("#buscarDepartamento");
-const departamentoNoResults = document.querySelector("#departamentoSinResultados");
-
-if (departamentoSelect && departamentoToggle && departamentoMenu && departamentoSearch) {
-    Array.from(departamentoSelect.options).forEach(option => {
-        if (!option.value) return;
-
-        const item = document.createElement("button");
-        item.type = "button";
-        item.className = "dropdown-item";
-        item.textContent = option.textContent;
-        item.addEventListener("click", () => {
-            departamentoSelect.value = option.value;
-            departamentoSelect.dispatchEvent(new Event("change", { bubbles: true }));
-            bootstrap.Dropdown.getOrCreateInstance(departamentoToggle).hide();
-        });
-
-        const listItem = document.createElement("li");
-        listItem.append(item);
-        departamentoMenu.append(listItem);
-    });
-
-    const departamentoItems = Array.from(departamentoMenu.querySelectorAll(".dropdown-item"));
-    const normalizeText = text => text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es");
-    const filterDepartamentos = () => {
-        const query = normalizeText(departamentoSearch.value.trim());
-        let visibleCount = 0;
-
-        departamentoItems.forEach(item => {
-            const matches = normalizeText(item.textContent).includes(query);
-            item.closest("li").hidden = !matches;
-            if (matches) visibleCount++;
-        });
-
-        if (departamentoNoResults) {
-            departamentoNoResults.classList.toggle("d-none", visibleCount > 0);
-        }
-    };
-
-    departamentoSearch.addEventListener("input", filterDepartamentos);
-    departamentoToggle.addEventListener("shown.bs.dropdown", () => departamentoSearch.focus());
-    departamentoToggle.addEventListener("hidden.bs.dropdown", () => {
-        departamentoSearch.value = "";
-        filterDepartamentos();
-    });
-
-    departamentoSelect.addEventListener("change", () => {
-        departamentoToggle.textContent = departamentoSelect.selectedOptions[0].textContent;
-    });
-}
