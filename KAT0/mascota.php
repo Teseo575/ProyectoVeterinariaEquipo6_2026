@@ -98,13 +98,30 @@ $estadoSeguro = htmlspecialchars($estado, ENT_QUOTES, "UTF-8");
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <style>
-    body { min-height: 100vh; background: #f4f7f3; color: #24352e; font-family: "DM Sans", "Segoe UI", sans-serif; }
-    .barra { min-height: 72px; background: #fbfcfa; border-bottom: 1px solid #e2e9e2; }
-    .marca { color: #173d32; font-weight: 800; text-decoration: none; }
+    :root {
+      --clr-veterinaria: #02A2EC;
+      --clr-principal: #02A2EC;
+      --clr-peligro: #ff7782;
+      --clr-exito: #41f1b6;
+      --clr-blanco: #fff;
+      --clr-info-oscuro: #7d8da1;
+      --clr-info-claro: #dce1eb;
+      --clr-oscuro: #363949;
+      --clr-advertencia: #ff4edc;
+      --clr-claro: rgba(132, 139, 200, 0.18);
+      --clr-variante-principal: #111e88;
+      --clr-variante-oscura: #677483;
+      --clr-fondo: #f6f6f9;
+      --sombra-caja: 0 2rem 3rem var(--clr-claro);
+    }
+    body { min-height: 100vh; background: var(--clr-fondo); color: var(--clr-oscuro); font-family: "DM Sans", "Segoe UI", sans-serif; }
+    .barra { min-height: 72px; background: var(--clr-blanco); border-bottom: 1px solid var(--clr-info-claro); }
+    .marca { color: var(--clr-oscuro); font-weight: 800; text-decoration: none; }
+    .marca:hover { color: var(--clr-principal); }
     .formulario-mascota { width: min(100%, 680px); margin: 0 auto; }
-    .panel { padding: 32px; border: 1px solid #e0e9e2; border-radius: 10px; background: #fff; box-shadow: 0 14px 36px rgba(36, 94, 75, 0.08); }
-    .btn-animalada { border: 0; background: #2e7057; color: #fff; font-weight: 700; }
-    .btn-animalada:hover { background: #245e4b; color: #fff; }
+    .panel { padding: 32px; border: 1px solid var(--clr-info-claro); border-radius: 10px; background: var(--clr-blanco); box-shadow: var(--sombra-caja); }
+    .btn-animalada { border: 0; background: var(--clr-principal); color: var(--clr-blanco); font-weight: 700; }
+    .btn-animalada:hover { background: var(--clr-variante-principal); color: var(--clr-blanco); }
     @media (max-width: 575px) { .panel { padding: 24px 18px; } }
   </style>
 </head>

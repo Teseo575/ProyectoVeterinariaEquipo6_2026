@@ -14,3 +14,11 @@ function exigirSesion()
         exit();
     }
 }
+
+function exigirAdmin()
+{
+    if (empty($_SESSION["adminAutenticado"])) {
+        header("Location: login.php");
+        exit();
+    }
+}

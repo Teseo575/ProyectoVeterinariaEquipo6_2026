@@ -51,12 +51,27 @@ $nombreUsuario = htmlspecialchars((string) ($_SESSION["Nombre"] ?? ""), ENT_QUOT
       se actualizan todos los componentes que la usan más abajo.
     */
     :root {
-      --color-verde-oscuro: #173d32;
-      --color-verde-principal: #2e7057;
-      --color-fondo-menta: #dcebe1;
-      --color-coral-acento: #e48769;
-      --color-texto-principal: #24352e;
-      --color-texto-secundario: #68766f;
+      --clr-veterinaria: #02A2EC;
+      --clr-principal: #02A2EC;
+      --clr-peligro: #ff7782;
+      --clr-exito: #41f1b6;
+      --clr-blanco: #fff;
+      --clr-info-oscuro: #7d8da1;
+      --clr-info-claro: #dce1eb;
+      --clr-oscuro: #363949;
+      --clr-advertencia: #ff4edc;
+      --clr-claro: rgba(132, 139, 200, 0.18);
+      --clr-variante-principal: #111e88;
+      --clr-variante-oscura: #677483;
+      --clr-fondo: #f6f6f9;
+      --sombra-caja: 0 2rem 3rem var(--clr-claro);
+
+      --color-verde-oscuro: var(--clr-oscuro);
+      --color-verde-principal: var(--clr-principal);
+      --color-fondo-menta: var(--clr-info-claro);
+      --color-coral-acento: var(--clr-veterinaria);
+      --color-texto-principal: var(--clr-oscuro);
+      --color-texto-secundario: var(--clr-variante-oscura);
     }
 
     /* Estilos generales heredados por toda la página. */
@@ -69,13 +84,19 @@ $nombreUsuario = htmlspecialchars((string) ($_SESSION["Nombre"] ?? ""), ENT_QUOT
     /* Barra de navegación superior; la altura disminuye en pantallas pequeñas. */
     .barra {
       min-height: 78px;
-      background: #fbfcfa;
+      background: var(--clr-blanco);
     }
 
     /* Tamaño del logo para mantenerlo proporcionado y sin deformarlo. */
     .logo-menu {
       width: 56px;
       height: 56px;
+      object-fit: contain;
+    }
+
+    .logo-veterinaria-menu {
+      width: 48px;
+      height: 48px;
       object-fit: contain;
     }
 
@@ -89,7 +110,7 @@ $nombreUsuario = htmlspecialchars((string) ($_SESSION["Nombre"] ?? ""), ENT_QUOT
 
     /* Apariencia de los enlaces de navegación. */
     .nav-link {
-      color: #4f6258;
+      color: var(--clr-variante-oscura);
       font-size: 0.92rem;
       font-weight: 600;
     }
@@ -110,7 +131,7 @@ $nombreUsuario = htmlspecialchars((string) ($_SESSION["Nombre"] ?? ""), ENT_QUOT
 
     /* El botón oscurece su fondo al pasar el puntero para indicar interacción. */
     .btn-animalada:hover {
-      background: #ce6f52;
+      background: var(--clr-variante-principal);
       color: #fff;
     }
 
@@ -145,7 +166,7 @@ $nombreUsuario = htmlspecialchars((string) ($_SESSION["Nombre"] ?? ""), ENT_QUOT
     .hero::after {
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(15, 44, 35, 0.86) 0%, rgba(15, 44, 35, 0.63) 43%, rgba(15, 44, 35, 0.08) 100%);
+      background: linear-gradient(90deg, rgba(54, 57, 73, 0.86) 0%, rgba(54, 57, 73, 0.63) 43%, rgba(54, 57, 73, 0.08) 100%);
       content: "";
     }
 
@@ -164,7 +185,7 @@ $nombreUsuario = htmlspecialchars((string) ($_SESSION["Nombre"] ?? ""), ENT_QUOT
       align-items: center;
       gap: 0.55rem;
       margin-bottom: 1.25rem;
-      color: #e1f1e5;
+      color: var(--clr-info-claro);
       font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -197,14 +218,14 @@ $nombreUsuario = htmlspecialchars((string) ($_SESSION["Nombre"] ?? ""), ENT_QUOT
 
     /* Color del enlace secundario al pasar el puntero. */
     .btn-contorno:hover {
-      color: #e1f1e5;
+      color: var(--clr-info-claro);
     }
 
     /* Sección de presentación, con espacio y fondo distintos al hero. */
     .servicios {
       padding-top: 5rem;
       padding-bottom: 5rem;
-      background: #f4f7f3;
+      background: var(--clr-fondo);
     }
 
     /* Pequeño rótulo que introduce cada sección. */
@@ -226,7 +247,7 @@ $nombreUsuario = htmlspecialchars((string) ($_SESSION["Nombre"] ?? ""), ENT_QUOT
     .servicio {
       height: 100%;
       padding: 1.5rem 0.5rem 0;
-      border-top: 2px solid #d6e5d9;
+      border-top: 2px solid var(--clr-info-claro);
     }
 
     /* Color y tamaño de los iconos que acompañan las características. */
@@ -275,8 +296,17 @@ $nombreUsuario = htmlspecialchars((string) ($_SESSION["Nombre"] ?? ""), ENT_QUOT
       }
 
       .logo-menu {
-        width: 48px;
-        height: 48px;
+        width: 40px;
+        height: 40px;
+      }
+
+      .logo-veterinaria-menu {
+        width: 36px;
+        height: 36px;
+      }
+
+      .marca-texto {
+        font-size: 0.9rem;
       }
 
       .hero {
@@ -284,7 +314,7 @@ $nombreUsuario = htmlspecialchars((string) ($_SESSION["Nombre"] ?? ""), ENT_QUOT
       }
 
       .hero::after {
-        background: linear-gradient(90deg, rgba(15, 44, 35, 0.83), rgba(15, 44, 35, 0.3));
+        background: linear-gradient(90deg, rgba(54, 57, 73, 0.83), rgba(54, 57, 73, 0.3));
       }
 
       .hero-contenido {
@@ -313,7 +343,8 @@ $nombreUsuario = htmlspecialchars((string) ($_SESSION["Nombre"] ?? ""), ENT_QUOT
   <div class="container">
     <!-- El logotipo vuelve al inicio de la portada, alt vacío porque el nombre aparece al lado. -->
     <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio" aria-label="Veterinaria Animalada, inicio">
-      <img src="KAT0 (Principal).png" class="logo-menu" alt="">
+      <img src="imgs/KAT0.png" class="logo-menu" alt="Logo KAT0">
+      <img src="imgs/LogoVeterinaria.png" class="logo-veterinaria-menu" alt="Logo de Veterinaria Animalada">
       <span class="marca-texto">Veterinaria Animalada</span>
     </a>
 
@@ -334,6 +365,7 @@ $nombreUsuario = htmlspecialchars((string) ($_SESSION["Nombre"] ?? ""), ENT_QUOT
         <a class="nav-link" href="#servicios">Nuestro cuidado</a>
         <!-- Debe coincidir con id="nosotros" en el bloque institucional. -->
         <a class="nav-link" href="#nosotros">Nosotros</a>
+        <a class="nav-link" href="shop.php">Pet Shop</a>
         <?php if ($usuarioAutenticado) { ?>
           <div class="dropdown ms-md-2">
             <button class="btn btn-animalada rounded-pill dropdown-toggle" type="button" id="menuPerfil" data-bs-toggle="dropdown" aria-expanded="false">

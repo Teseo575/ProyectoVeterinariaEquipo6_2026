@@ -21,12 +21,26 @@
     ====================================================== */
 
     :root {
-      --verde-oscuro: #4d7e68;
-      --verde-medio: #7ea88d;
-      --verde-suave: #edf7f0;
-      --blanco: #ffffff;
-      --gris: #53646d;
-      --negro: #1d2a22;
+      --clr-veterinaria: #02A2EC;
+      --clr-principal: #02A2EC;
+      --clr-peligro: #ff7782;
+      --clr-exito: #41f1b6;
+      --clr-blanco: #fff;
+      --clr-info-oscuro: #7d8da1;
+      --clr-info-claro: #dce1eb;
+      --clr-oscuro: #363949;
+      --clr-advertencia: #ff4edc;
+      --clr-claro: rgba(132, 139, 200, 0.18);
+      --clr-variante-principal: #111e88;
+      --clr-variante-oscura: #677483;
+      --clr-fondo: #f6f6f9;
+      --sombra-caja: 0 2rem 3rem var(--clr-claro);
+      --verde-oscuro: var(--clr-oscuro);
+      --verde-medio: var(--clr-principal);
+      --verde-suave: var(--clr-fondo);
+      --blanco: var(--clr-blanco);
+      --gris: var(--clr-variante-oscura);
+      --negro: var(--clr-oscuro);
     }
 
     body {
@@ -50,7 +64,7 @@
       background: var(--blanco);
       border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(77, 126, 104, 0.15);
+      box-shadow: var(--sombra-caja);
     }
 
     .lado-imagen {
@@ -65,7 +79,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(25, 62, 48, 0.45);
+      background: rgba(54, 57, 73, 0.45);
     }
 
     .texto-imagen {
@@ -87,8 +101,17 @@
 
     .logo {
       display: block;
-      width: 150px;
+      width: 112px;
+      height: 112px;
       margin: 0 auto 18px;
+      object-fit: contain;
+    }
+
+    .logos-registro {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
     }
 
     .titulo {
@@ -103,13 +126,14 @@
     }
 
     .btn-kat0 {
-      background:var(--verde-medio);
+      background: var(--verde-medio);
       color: white;
       border: none;
       font-weight: 700;
     }
     .btn-kat0:hover {
-      color:#4d7e68;
+      background: var(--clr-variante-principal);
+      color: white;
       opacity: 0.9;
     }
   </style>
@@ -144,11 +168,10 @@
         ================================================== -->
         <div class="col-lg-6 formulario">
 
-          <img
-            class="logo"
-            src="KAT0 (Principal).png"
-            alt="Logo KAT0"
-          >
+          <div class="logos-registro">
+            <img class="logo" src="imgs/KAT0.png" alt="Logo KAT0">
+            <img class="logo" src="imgs/LogoVeterinaria.png" alt="Logo de Veterinaria Animalada">
+          </div>
 
           <h2 class="titulo">Crear cuenta</h2>
 

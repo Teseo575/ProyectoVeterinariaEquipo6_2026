@@ -15,12 +15,30 @@ $nombre = htmlspecialchars($_SESSION["Nombre"] ?? "Usuario", ENT_QUOTES, "UTF-8"
   <title>Mi cuenta | Veterinaria Animalada</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body { min-height: 100vh; background: #f4f7f4; color: #263a32; font-family: "Segoe UI", Arial, sans-serif; }
-    .barra { background: #fff; border-bottom: 1px solid #e3eae5; }
+    :root {
+      --clr-veterinaria: #02A2EC;
+      --clr-principal: #02A2EC;
+      --clr-peligro: #ff7782;
+      --clr-exito: #41f1b6;
+      --clr-blanco: #fff;
+      --clr-info-oscuro: #7d8da1;
+      --clr-info-claro: #dce1eb;
+      --clr-oscuro: #363949;
+      --clr-advertencia: #ff4edc;
+      --clr-claro: rgba(132, 139, 200, 0.18);
+      --clr-variante-principal: #111e88;
+      --clr-variante-oscura: #677483;
+      --clr-fondo: #f6f6f9;
+      --sombra-caja: 0 2rem 3rem var(--clr-claro);
+    }
+    body { min-height: 100vh; background: var(--clr-fondo); color: var(--clr-oscuro); font-family: "Segoe UI", Arial, sans-serif; }
+    .barra { background: var(--clr-blanco); border-bottom: 1px solid var(--clr-info-claro); }
     .contenido { max-width: 760px; }
-    .bienvenida { border: 1px solid #e3eae5; border-radius: 10px; background: #fff; }
-    .btn-animalada { border: 0; background: #245e4b; color: #fff; font-weight: 700; }
-    .btn-animalada:hover { background: #194a39; color: #fff; }
+    .bienvenida { border: 1px solid var(--clr-info-claro); border-radius: 10px; background: var(--clr-blanco); box-shadow: var(--sombra-caja); }
+    .btn-animalada { border: 0; background: var(--clr-principal); color: var(--clr-blanco); font-weight: 700; }
+    .btn-animalada:hover { background: var(--clr-variante-principal); color: var(--clr-blanco); }
+    .navbar-brand { color: var(--clr-oscuro); }
+    .navbar-brand:hover { color: var(--clr-principal); }
   </style>
 </head>
 <body>

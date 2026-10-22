@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440">
+  <rect width="640" height="440" rx="28" fill="#e5f5fc"/>
+  <circle cx="320" cy="220" r="155" fill="#c8eafa"/>
+  <path d="m216 91 208 0 28 278H188z" fill="#078fc9"/>
+  <path d="m216 91 208 0 12 47H204z" fill="#086b9c"/>
+  <path d="M233 176h174v112H233z" rx="16" fill="#fff"/>
+  <circle cx="320" cy="217" r="33" fill="#f4bd72"/>
+  <path d="M297 208q-14-24-24-8t20 32m52-24q14-24 24-8t-20 32" fill="#754c32"/>
+  <circle cx="309" cy="214" r="4" fill="#363949"/><circle cx="331" cy="214" r="4" fill="#363949"/>
+  <path d="M316 225q4 5 8 0" fill="none" stroke="#363949" stroke-width="4" stroke-linecap="round"/>
+  <text x="320" y="316" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#fff">NUTRICIÓN DIARIA</text>
+  <text x="320" y="345" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#fff">PERROS ADULTOS</text>
+</svg>
