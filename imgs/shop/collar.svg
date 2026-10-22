@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440">
+  <rect width="640" height="440" rx="28" fill="#e6f5ed"/>
+  <circle cx="320" cy="220" r="155" fill="#ccebd9"/>
+  <path d="M202 142q118 164 236 0l42 42q-138 188-320 0z" fill="#21a477"/>
+  <path d="M232 172q88 116 176 0" fill="none" stroke="#147b59" stroke-width="10"/>
+  <rect x="287" y="218" width="66" height="60" rx="12" fill="#f5bf57" stroke="#9a6c20" stroke-width="7"/>
+  <path d="M320 230v33" stroke="#9a6c20" stroke-width="7" stroke-linecap="round"/>
+  <path d="M320 278v34q0 15 15 15t15-15" fill="none" stroke="#f5bf57" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="350" cy="312" r="12" fill="#f5bf57"/>
+  <text x="320" y="377" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#175b43">CÓMODO Y AJUSTABLE</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440">
+  <rect width="640" height="440" rx="28" fill="#f2eafb"/>
+  <circle cx="320" cy="220" r="155" fill="#e4d4f5"/>
+  <path d="m216 91 208 0 28 278H188z" fill="#7651a8"/>
+  <path d="m216 91 208 0 12 47H204z" fill="#55347f"/>
+  <path d="M233 176h174v112H233z" fill="#fff"/>
+  <path d="m284 204-5-30 30 15m47 15 5-30-30 15" fill="#d9a66b"/>
+  <ellipse cx="320" cy="220" rx="42" ry="38" fill="#d9a66b"/>
+  <circle cx="305" cy="216" r="4" fill="#363949"/><circle cx="335" cy="216" r="4" fill="#363949"/>
+  <path d="m315 228 5-4 5 4-5 5z" fill="#b56577"/>
+  <text x="320" y="316" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#fff">RECETA EQUILIBRADA</text>
+  <text x="320" y="345" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#fff">GATOS ADULTOS</text>
+</svg>
