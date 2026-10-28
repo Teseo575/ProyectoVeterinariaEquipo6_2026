@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador
+    </title>
+    <!--BootStrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Hoja de estilos-->
+    <link rel="stylesheet" href="style.css">
+    <!--DataTable-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/3.1.2/css/dataTables.bootstrap5.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        <!-- Inicio sección logo-->
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <h2><img src="imgs/LogoVeterinaria.png" alt="logo veterinaira"><span
+                            class="veterinaria">ANIMALADA´S</span></h2>
+                    <div class="close" id="close_btn">
+                        <span class="material-symbols-rounded"> close </span>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin del top-->
+
+            <nav id="sidebar">
+
+                <a href="#" data-section="panel">
+                    <span class="material-symbols-rounded">
+                        space_dashboard
+                    </span>
+                    <h3>Panel</h3>
+                </a>
+
+                <a href="#" data-section="agenda">
+                    <span class="material-symbols-rounded">
+                        calendar_clock
+                    </span>
+                    <h3>Agenda</h3>
+                </a>
+
+                <a href="#" data-section="analiticas">
+                    <span class="material-symbols-rounded">
+                        analytics
+                    </span>
+                    <h3>Analíticas</h3>
+                </a>
+
+                <a href="#" data-section="servicios">
+                    <span class="material-symbols-rounded">
+                        medical_information
+                    </span>
+                    <h3>Servicios</h3>
+                </a>
+
+                <a href="#" data-section="clientes">
+                        <span class="material-symbols-rounded">person</span>
+                        <h3>Usuarios</h3>
+                </a>
+
+                <a href="#" data-section="mascotas">
+                    <span class="material-symbols-rounded">
+                        pets
+                    </span>
+                    <h3>Mascotas</h3>
+                </a>
+
+                <a href="#" data-section="productos">
+                    <span class="material-symbols-rounded">local_mall</span>
+                    <h3>Productos</h3>
+                </a>
+
+                <a href="#" data-section="reportes">
+                    <span class="material-symbols-rounded">
+                        breaking_news
+                    </span>
+                    <h3>Reportes</h3>
+                </a>
+
+                <a href="#" data-section="logout">
+                    <span class="material-symbols-rounded">
+                        logout
+                    </span>
+                    <h3>Cerrar Sesión</h3>
+                </a>
+
+
+
+            </nav>
+
+
+        </aside>
+        <!-- Final seccíon del costado-->
+
+
+        <!-- Inicio sección principal-->
+        <main>
+            <section id="panel" class="main-section active">
+                <h1>Panel</h1>
+
+                <div class="date">
+                    <input type="date">
+                </div>
+
+                <div class="insights">
+                    <!-- Inicio Vender-->
+                    <div class="ventas">
+                        <span class="material-symbols-rounded">
+                            trending_up
+                        </span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Ventas totales</h3>
+                                <h1>$41,433</h1>
+                            </div>
+                            <div class="progress">
+                                <svg viewBox="0 0 80 80" aria-hidden="true">
+                                    <circle r="30" cy="40" cx="40"> </circle>
+                                </svg>
+                                <div class="number"> 80%</div>
+                            </div>
+                        </div>
+                        <small>Ultimas 24 Horas</small>
+                    </div>
+
+                    <!-- Fin Vender-->
+
+                    <!-- Inicio Gastos-->
+                    <div class="gastos">
+                        <span class="material-symbols-rounded">
+                            local_mall
+                        </span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Gastos totales</h3>
+                                <h1>$999</h1>
+                            </div>
+                            <div class="progress">
+                                <svg viewBox="0 0 80 80" aria-hidden="true">
+                                    <circle r="30" cy="40" cx="40"> </circle>
+                                </svg>
+                                <div class="number"> 80%</div>
+                            </div>
+                        </div>
+                        <small>Ultimas 24 Horas</small>
+                    </div>
+
+                    <!-- Fin Gastos-->
+
+                    <!-- Inicio Ganancias-->
+                    <div class="ganancias">
+                        <span class="material-symbols-rounded">
+                            paid
+                        </span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Ganancias</h3>
+                                <h1>$32,046</h1>
+                            </div>
+                            <div class="progress">
+                                <svg viewBox="0 0 80 80" aria-hidden="true">
+                                    <circle r="30" cy="40" cx="40"> </circle>
+                                </svg>
+                                <div class="number"> 80%</div>
+                            </div>
+                        </div>
+                        <small>Ultimas 24 Horas</small>
+                    </div>
+
+                    <!-- Fin Ganancias-->
+                </div>
+                <!-- Fin insides-->
+
+                <!-- Inicio Compras recientes-->
+                <div class="recient_order">
+                    <h1>Compras recientes</h1>
+                    <table>
+
+
+                        <thead>
+                            <tr>
+                                <th><!-- Imagen--></th>
+                                <th>Nombre del Producto</th>
+                                <th>Cantidad</th>
+                                <th>Monto</th>
+                                <th>Estado</th>
+                                <th>Detalles</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td><img class="imagen-producto"
+                                        src="https://www.shutterstock.com/shutterstock/photos/106914167/display_1500/stock-photo-under-construction-d-little-human-character-the-builder-sitting-with-a-laptop-side-view-people-106914167.jpg"
+                                        alt="En contrucción"></td>
+                                <td>Croquetas</td>
+                                <td>1</td>
+                                <td>$350</td>
+                                <td class="warning"> Completado</td>
+                                <td class="primary">Detalles</td>
+                            </tr>
+
+                            <tr>
+                                <td><img class="imagen-producto"
+                                        src="https://www.shutterstock.com/shutterstock/photos/106914167/display_1500/stock-photo-under-construction-d-little-human-character-the-builder-sitting-with-a-laptop-side-view-people-106914167.jpg"
+                                        alt="En contrucción"></td>
+                                <td>Croquetas</td>
+                                <td>1</td>
+                                <td>$350</td>
+                                <td class="warning"> Completado</td>
+                                <td class="primary">Detalles</td>
+                            </tr>
+
+                            <tr>
+                                <td><img class="imagen-producto"
+                                        src="https://www.shutterstock.com/shutterstock/photos/106914167/display_1500/stock-photo-under-construction-d-little-human-character-the-builder-sitting-with-a-laptop-side-view-people-106914167.jpg"
+                                        alt="En contrucción"></td>
+                                <td>Croquetas</td>
+                                <td>1</td>
+                                <td>$350</td>
+                                <td class="warning"> Completado</td>
+                                <td class="primary">Detalles</td>
+                            </tr>
+
+                            <tr>
+                                <td><img class="imagen-producto"
+                                        src="https://www.shutterstock.com/shutterstock/photos/106914167/display_1500/stock-photo-under-construction-d-little-human-character-the-builder-sitting-with-a-laptop-side-view-people-106914167.jpg"
+                                        alt="En contrucción"></td>
+                                <td>Croquetas</td>
+                                <td>1</td>
+                                <td>$350</td>
+                                <td class="warning"> Completado</td>
+                                <td class="primary">Detalles</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+
+
+                <!-- Fin Compras recientes-->
+            </section>
+            <!-- Fin sección Panel-->
+
+            <section id="agenda" class="main-section">
+                <h1>Agenda</h1>
+                <p>Acá puedes agendar citas y verlas en el día correspondiente del calendario.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#modalCita">
+                    Agendar cita
+                </button>
+                <button type="button" class="btn btn-outline-primary ms-2" id="toggleCalendario"
+                    aria-expanded="false" aria-controls="calendarioAgenda">
+                    Calendario
+                </button>
+                <section class="agenda-citas">
+                    <h2>Citas agendadas</h2>
+                    <div class="table-responsive">
+                        <table id="datatable_citas" class="table table-striped table-hover align-middle">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Motivo</th>
+                                    <th>Estado</th>
+                                    <th>Servicios</th>
+                                    <th>Cliente</th>
+                                    <th>Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="calendario d-none" id="calendarioAgenda">
+                    <header class="calendario_header">
+                        <div class="header_container">
+                            <button id="prevMonth" class="btn btn-outline-primary" aria-label="Mes anterior">&lt;</button>
+                            <h3 class="container_heading" id="calendar-date"></h3>
+                            <button id="nextMonth" class="btn btn-outline-primary" aria-label="Mes siguiente">&gt;</button>
+                        </div>
+                    </header>
+                    <section class="calendario_semana">
+                        <div class="semana">
+                            <div class="dia"><h4>Lunes</h4><abbr title="Lunes">Lun</abbr></div>
+                            <div class="dia"><h4>Martes</h4><abbr title="Martes">Mar</abbr></div>
+                            <div class="dia"><h4>Miércoles</h4><abbr title="Miércoles">Mié</abbr></div>
+                            <div class="dia"><h4>Jueves</h4><abbr title="Jueves">Jue</abbr></div>
+                            <div class="dia"><h4>Viernes</h4><abbr title="Viernes">Vie</abbr></div>
+                            <div class="dia"><h4>Sábado</h4><abbr title="Sábado">Sáb</abbr></div>
+                            <div class="dia"><h4>Domingo</h4><abbr title="Domingo">Dom</abbr></div>
+                        </div>
+                    </section>
+                    <ol class="calendario_dias" id="calendar-days">
+                        <!-- Los días del mes se generarán dinámicamente con JavaScript -->
+                    </ol>
+                </section>
+            </section>
+            <section id="analiticas" class="main-section">
+                <div class="analytics-heading">
+                    <div>
+                        <h1>Analíticas</h1>
+                        <p>Resumen del rendimiento de la veterinaria.</p>
+                    </div>
+                    <div class="analytics-year-filter">
+                        <label for="analyticsYear">Año del informe</label>
+                        <select id="analyticsYear" class="form-select" aria-label="Año del informe"></select>
+                    </div>
+                </div>
+
+                <div class="analytics-metrics" aria-label="Indicadores del año">
+                    <article class="analytics-metric">
+                        <span class="material-symbols-rounded" aria-hidden="true">pets</span>
+                        <div>
+                            <p>Mascotas atendidas</p>
+                            <strong id="analyticsPetsAttended">0</strong>
+                            <small>Atenciones completadas en el año</small>
+                        </div>
+                    </article>
+                    <article class="analytics-metric">
+                        <span class="material-symbols-rounded" aria-hidden="true">group</span>
+                        <div>
+                            <p>Usuarios en la página</p>
+                            <strong id="analyticsUsers">—</strong>
+                            <small>Visitas en tiempo real no conectadas</small>
+                            <small>Clientes registrados: <span id="analyticsUsersRegistered">0</span></small>
+                        </div>
+                    </article>
+                    <article class="analytics-metric">
+                        <span class="material-symbols-rounded" aria-hidden="true">reviews</span>
+                        <div>
+                            <p>Reseñas</p>
+                            <strong id="analyticsReviews">0</strong>
+                            <small><span id="analyticsReviewRating">Sin calificación</span></small>
+                        </div>
+                    </article>
+                </div>
+
+                <section class="stock-analytics" aria-labelledby="stockAnalyticsTitle">
+                    <div class="stock-analytics-heading">
+                        <div>
+                            <h2 id="stockAnalyticsTitle">Analítica de stock</h2>
+                            <p>Existencias actuales y alertas de reposición.</p>
+                        </div>
+                        <div class="stock-threshold-control">
+                            <label for="stockThreshold">Stock bajo cuando queden</label>
+                            <div class="input-group">
+                                <input id="stockThreshold" class="form-control" type="number" min="0" step="1"
+                                    value="5" aria-label="Umbral de stock bajo">
+                                <span class="input-group-text">unidades o menos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stock-metrics" aria-label="Resumen del inventario">
+                        <article class="stock-metric">
+                            <span class="material-symbols-rounded" aria-hidden="true">inventory_2</span>
+                            <div><p>Productos</p><strong id="stockProductsCount">0</strong></div>
+                        </article>
+                        <article class="stock-metric">
+                            <span class="material-symbols-rounded" aria-hidden="true">inventory</span>
+                            <div><p>Unidades disponibles</p><strong id="stockUnitsCount">0</strong></div>
+                        </article>
+                        <article class="stock-metric stock-metric-warning">
+                            <span class="material-symbols-rounded" aria-hidden="true">warning</span>
+                            <div><p>Productos con stock bajo</p><strong id="stockLowCount">0</strong></div>
+                        </article>
+                    </div>
+                    <p id="stockAlert" class="stock-alert" role="status" aria-live="polite">
+                        No hay productos con stock bajo.
+                    </p>
+                    <div id="stockAnalyticsTableContainer" class="table-responsive">
+                        <table class="table align-middle stock-analytics-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Categoría</th>
+                                    <th scope="col">Proveedor</th>
+                                    <th scope="col">Existencias</th>
+                                    <th scope="col">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="stockAnalyticsRows"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="analytics-panel" aria-labelledby="analyticsSalesTitle">
+                    <div class="analytics-panel-heading">
+                        <div>
+                            <h2 id="analyticsSalesTitle">Informe de ventas por mes</h2>
+                            <p>Comparación de ventas online y locales durante el año seleccionado.</p>
+                        </div>
+                        <div class="analytics-legend" aria-label="Leyenda">
+                            <span><i class="analytics-legend-online"></i>Online</span>
+                            <span><i class="analytics-legend-local"></i>Local</span>
+                        </div>
+                    </div>
+                    <div id="analyticsSalesChart" class="analytics-chart" role="img"
+                        aria-label="Gráfico mensual de ventas online y locales"></div>
+                </section>
+
+                <section class="analytics-panel" aria-labelledby="analyticsMonthlyTitle">
+                    <div class="analytics-panel-heading">
+                        <div>
+                            <h2 id="analyticsMonthlyTitle">Detalle mensual</h2>
+                            <p id="analyticsYearSummary">Totales por canal de venta.</p>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table analytics-table align-middle">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Mes</th>
+                                    <th scope="col">Ventas online</th>
+                                    <th scope="col">Ventas locales</th>
+                                    <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="analyticsMonthlyRows"></tbody>
+                            <tfoot id="analyticsMonthlyTotals"></tfoot>
+                        </table>
+                    </div>
+                </section>
+                <p class="analytics-data-note">
+                    Las ventas y reseñas se muestran a partir de los registros disponibles en este navegador.
+                    Los usuarios corresponden a clientes registrados; las visitas en tiempo real requieren
+                    conectar una herramienta de analítica web.
+                </p>
+            </section>
+
+            <section id="servicios" class="main-section">
+                <h1>Servicios</h1>
+                <div id="resumenServicios" class="insights servicios-grid">
+                    <div class="Internacion" data-service-panel role="button" tabindex="0" aria-controls="detalleServicio" aria-expanded="false">
+                        <span class="material-symbols-rounded">
+                            hotel
+                        </span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Internación</h3>
+                                <h1>8</h1>
+                            </div>
+                            <div class="progress">
+                                <svg viewBox="0 0 80 80" aria-hidden="true">
+                                    <circle r="30" cy="40" cx="40"> </circle>
+                                </svg>
+                                <div class="number">55%</div>
+                            </div>
+                        </div>
+                        <small>En curso</small>
+                    </div>
+
+                    <div class="Cirugia" data-service-panel role="button" tabindex="0" aria-controls="detalleServicio" aria-expanded="false">
+                        <span class="material-symbols-rounded">
+                            local_hospital
+                        </span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Cirugía</h3>
+                                <h1>15</h1>
+                            </div>
+                            <div class="progress">
+                                <svg viewBox="0 0 80 80" aria-hidden="true">
+                                    <circle r="30" cy="40" cx="40"> </circle>
+                                </svg>
+                                <div class="number">66%</div>
+                            </div>
+                        </div>
+                        <small>Programadas</small>
+                    </div>
+
+                    <div class="BanoPeluqueria" data-service-panel role="button" tabindex="0" aria-controls="detalleServicio" aria-expanded="false">
+                        <span class="material-symbols-rounded">
+                            spa
+                        </span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Baño / Peluquería</h3>
+                                <h1>23</h1>
+                            </div>
+                            <div class="progress">
+                                <svg viewBox="0 0 80 80" aria-hidden="true">
+                                    <circle r="30" cy="40" cx="40"> </circle>
+                                </svg>
+                                <div class="number">82%</div>
+                            </div>
+                        </div>
+                        <small>Solicitados</small>
+                    </div>
+
+                    <div class="AnalisisSangre" data-service-panel role="button" tabindex="0" aria-controls="detalleServicio" aria-expanded="false">
+                        <span class="material-symbols-rounded">
+                            bloodtype
+                        </span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Análisis de sangre</h3>
+                                <h1>19</h1>
+                            </div>
+                            <div class="progress">
+                                <svg viewBox="0 0 80 80" aria-hidden="true">
+                                    <circle r="30" cy="40" cx="40"> </circle>
+                                </svg>
+                                <div class="number">74%</div>
+                            </div>
+                        </div>
+                        <small>Realizados</small>
+                    </div>
+
+                    <div class="PensionadoGato" data-service-panel role="button" tabindex="0" aria-controls="detalleServicio" aria-expanded="false">
+                        <span class="material-symbols-rounded">
+                            pets
+                        </span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Pensionado Gato</h3>
+                                <h1>5</h1>
+                            </div>
+                            <div class="progress">
+                                <svg viewBox="0 0 80 80" aria-hidden="true">
+                                    <circle r="30" cy="40" cx="40"> </circle>
+                                </svg>
+                                <div class="number">48%</div>
+                            </div>
+                        </div>
+                        <small>Activos</small>
+                    </div>
+
+                    <div class="Vacunacion" data-service-panel role="button" tabindex="0" aria-controls="detalleServicio" aria-expanded="false">
+                        <span class="material-symbols-rounded">
+                            vaccines
+                        </span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Vacunación</h3>
+                                <h1>27</h1>
+                            </div>
+                            <div class="progress">
+                                <svg viewBox="0 0 80 80" aria-hidden="true">
+                                    <circle r="30" cy="40" cx="40"> </circle>
+                                </svg>
+                                <div class="number">88%</div>
+                            </div>
+                        </div>
+                        <small>Aplicadas</small>
+                    </div>
+                </div>
+                <div id="detalleServicio" class="servicio-detalle d-none" aria-live="polite">
+                    <button id="volverServicios" type="button" class="btn btn-outline-secondary mb-3">
+                        <span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>
+                        Volver a Servicios
+                    </button>
+                    <div class="servicio-detalle-card">
+                        <h2 id="tituloDetalleServicio"></h2>
+                        <div class="servicio-detalle-metricas">
+                            <div>
+                                <small>Cantidad</small>
+                                <strong id="cantidadDetalleServicio"></strong>
+                            </div>
+                            <div>
+                                <small>Indicador</small>
+                                <strong id="indicadorDetalleServicio"></strong>
+                            </div>
+                            <div>
+                                <small>Detalle</small>
+                                <strong id="estadoDetalleServicio"></strong>
+                            </div>
+                        </div>
+                        <h3 class="h5 mt-4">Servicios realizados</h3>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover align-middle">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Mascota</th>
+                                        <th scope="col">Cliente</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="4" class="text-center">No hay registros de servicios realizados.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="clientes" class="main-section">
+                <h1>Usuarios</h1>
+                <p>Administración de clientes y empleados de la veterinaria.</p>
+                <div class="d-flex justify-content-center mb-3">
+                    <div class="tabla-vista-toggle" role="group" aria-label="Sección de usuarios">
+                        <button type="button" class="active" data-vista-usuario="clientes" aria-pressed="true">
+                            Clientes
+                        </button>
+                        <button type="button" data-vista-usuario="empleados" aria-pressed="false">
+                            Empleados
+                        </button>
+                    </div>
+                </div>
+                <div id="panelUsuariosClientes">
+                    <h2 class="fs-5 mb-3">Clientes</h2>
+                <div class="table-responsive">
+                    <table id="datatable_usuarios" class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Cédula</th>
+                                <th>Nombre</th>
+                                <th>Gmail</th>
+                                <th>Teléfono</th>
+                                <th>Dirección</th>
+                                <th>Departamento</th>
+                                <th>Mascota</th>
+                                <th> Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody_usuarios" class="table-body">
+                            <tr>
+                                <td></td>
+                                <td>45678901</td>
+                                <td>Lucía Fernández</td>
+                                <td>lucia.fernandez@ejemplo.com</td>
+                                <td>099 123 456</td>
+                                <td>Av. Rivera 1234</td>
+                                <td>Montevideo</td>
+                                <td>Lúa, Milo</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="formAgregarClientePanel" class="mt-4">
+                    <h2 class="fs-5 mb-3">Agregar cliente</h2>
+                    <form id="formCliente">
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteCi">Cédula</label>
+                            <input type="text" class="form-control" id="clienteCi" name="ci" placeholder="Cédula"
+                                aria-label="Cédula" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteNombre">Nombre</label>
+                            <input type="text" class="form-control" id="clienteNombre" name="nombre"
+                                placeholder="Nombre" aria-label="Nombre" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteApellido">Apellido</label>
+                            <input type="text" class="form-control" id="clienteApellido" name="apellido"
+                                placeholder="Apellido" aria-label="Apellido" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteTelefono">Teléfono</label>
+                            <input type="tel" class="form-control" id="clienteTelefono" name="telefono"
+                                placeholder="Teléfono*" aria-label="Teléfono" autocomplete="tel" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteDireccion">Dirección</label>
+                            <input type="text" class="form-control" id="clienteDireccion" name="direccion"
+                                placeholder="Dirección" aria-label="Dirección" required>
+                        </div>
+                        <div class="input-group mb-3 dropdown departamento-dropdown">
+                            <select class="visually-hidden" id="clienteDepartamento" name="departamento"
+                                aria-label="Departamento" required>
+                                <option value="" selected disabled>Departamento</option>
+                                <option value="Artigas">Artigas</option>
+                                <option value="Canelones">Canelones</option>
+                                <option value="Cerro Largo">Cerro Largo</option>
+                                <option value="Colonia">Colonia</option>
+                                <option value="Durazno">Durazno</option>
+                                <option value="Flores">Flores</option>
+                                <option value="Florida">Florida</option>
+                                <option value="Lavalleja">Lavalleja</option>
+                                <option value="Maldonado">Maldonado</option>
+                                <option value="Montevideo">Montevideo</option>
+                                <option value="Paysandú">Paysandú</option>
+                                <option value="Río Negro">Río Negro</option>
+                                <option value="Rivera">Rivera</option>
+                                <option value="Rocha">Rocha</option>
+                                <option value="Salto">Salto</option>
+                                <option value="San José">San José</option>
+                                <option value="Soriano">Soriano</option>
+                                <option value="Tacuarembó">Tacuarembó</option>
+                                <option value="Treinta y Tres">Treinta y Tres</option>
+                            </select>
+                            <button class="form-select text-start" type="button" id="clienteDepartamentoToggle"
+                                data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"
+                                data-bs-auto-close="outside" aria-controls="clienteDepartamentoMenu">
+                                Departamento
+                            </button>
+                            <ul class="dropdown-menu" id="clienteDepartamentoMenu"
+                                aria-labelledby="clienteDepartamentoToggle">
+                                <li class="departamento-search-item">
+                                    <input type="search" class="form-control form-control-sm" id="buscarDepartamento"
+                                        placeholder="Buscar departamento" aria-label="Buscar departamento"
+                                        autocomplete="off">
+                                </li>
+                                <li id="departamentoSinResultados" class="dropdown-item-text d-none">
+                                    Sin resultados
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteContrasena">Contraseña</label>
+                            <input type="password" class="form-control" id="clienteContrasena" name="contrasena"
+                                placeholder="Contraseña" aria-label="Contraseña" autocomplete="new-password" required>
+                        </div>
+                        <div class="input-group">
+
+                            <label class="visually-hidden" for="clienteEmail">Gmail</label>
+                            <input type="email" class="form-control" id="clienteEmail" name="email" placeholder="Gmail"
+                                aria-label="Gmail" autocomplete="email" required>
+                            <span class="input-group-text" id="basic-addon2">@ejemplo.com</span>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                            <label class="form-check-label" for="checkDefault">
+                                Mascota
+                            </label>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary mt-3">Agregar cliente</button>
+                    </form>
+                </div>
+                </div>
+
+                <div id="panelUsuariosEmpleados" class="d-none">
+                    <h2 class="fs-5 mb-3">Empleados</h2>
+                <div class="table-responsive">
+                    <table id="datatable_empleados" class="table">
+                        <thead>
+                            <tr>
+                                <th> </th>
+                                <th>Cédula</th>
+                                <th>Nombre</th>
+                                <th>Cargo</th>
+                                <th>Gmail</th>
+                                <th>Teléfono</th>
+                                <th>Dirección</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody_empleados" class="table-body"></tbody>
+                    </table>
+                </div>
+                <div id="formAgregarEmpleadoPanel" class="mt-4">
+                    <h2 class="fs-5 mb-3">Agregar empleado</h2>
+                    <form id="formEmpleado">
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="empleadoCi">Cédula</label>
+                            <input type="text" class="form-control" id="empleadoCi" name="ci"
+                                placeholder="Cédula" aria-label="Cédula" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="empleadoNombre">Nombre</label>
+                            <input type="text" class="form-control" id="empleadoNombre" name="nombre"
+                                placeholder="Nombre" aria-label="Nombre" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="empleadoApellido">Apellido</label>
+                            <input type="text" class="form-control" id="empleadoApellido" name="apellido"
+                                placeholder="Apellido" aria-label="Apellido" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="empleadoDireccion">Dirección</label>
+                            <input type="text" class="form-control" id="empleadoDireccion" name="direccion"
+                                placeholder="Dirección" aria-label="Dirección" required>
+                        </div>
+                        <div class="input-group mb-3 dropdown departamento-dropdown">
+                            <select class="visually-hidden" id="empleadoDepartamento" name="departamento"
+                                aria-label="Departamento" required>
+                                <option value="" selected disabled>Departamento</option>
+                                <option value="Artigas">Artigas</option>
+                                <option value="Canelones">Canelones</option>
+                                <option value="Cerro Largo">Cerro Largo</option>
+                                <option value="Colonia">Colonia</option>
+                                <option value="Durazno">Durazno</option>
+                                <option value="Flores">Flores</option>
+                                <option value="Florida">Florida</option>
+                                <option value="Lavalleja">Lavalleja</option>
+                                <option value="Maldonado">Maldonado</option>
+                                <option value="Montevideo">Montevideo</option>
+                                <option value="Paysandú">Paysandú</option>
+                                <option value="Río Negro">Río Negro</option>
+                                <option value="Rivera">Rivera</option>
+                                <option value="Rocha">Rocha</option>
+                                <option value="Salto">Salto</option>
+                                <option value="San José">San José</option>
+                                <option value="Soriano">Soriano</option>
+                                <option value="Tacuarembó">Tacuarembó</option>
+                                <option value="Treinta y Tres">Treinta y Tres</option>
+                            </select>
+                            <button class="form-select text-start is-placeholder" type="button"
+                                id="empleadoDepartamentoToggle" data-bs-toggle="dropdown" data-bs-display="static"
+                                aria-expanded="false" data-bs-auto-close="outside"
+                                aria-controls="empleadoDepartamentoMenu">
+                                Departamento
+                            </button>
+                            <ul class="dropdown-menu" id="empleadoDepartamentoMenu"
+                                aria-labelledby="empleadoDepartamentoToggle">
+                                <li class="departamento-search-item">
+                                    <input type="search" class="form-control form-control-sm"
+                                        id="buscarEmpleadoDepartamento" placeholder="Buscar departamento"
+                                        aria-label="Buscar departamento" autocomplete="off">
+                                </li>
+                                <li id="empleadoDepartamentoSinResultados" class="dropdown-item-text d-none">
+                                    Sin resultados
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="empleadoContrasena">Contraseña</label>
+                            <input type="password" class="form-control" id="empleadoContrasena" name="contrasena"
+                                placeholder="Contraseña" aria-label="Contraseña" autocomplete="new-password" required>
+                        </div>
+                        <div class="input-group mt-3">
+                            <label class="visually-hidden" for="empleadoRol">Rol</label>
+                            <input type="text" class="form-control" id="empleadoRol" name="rol"
+                                placeholder="Rol" aria-label="Rol" required>
+                        </div>
+                        <div class="input-group">
+                            <label class="visually-hidden" for="empleadoGmail">Gmail</label>
+                            <input type="email" class="form-control" id="empleadoGmail" name="gmail"
+                                placeholder="Gmail" aria-label="Gmail" autocomplete="email" required>
+                            <span class="input-group-text">@ejemplo.com</span>
+                        </div>
+                        <button type="button" class="btn btn-primary mt-3">Agregar empleado</button>
+                    </form>
+                </div>
+                </div>
+            </section>
+
+            <section id="perfilUsuario" class="main-section perfil-usuario-vista" aria-labelledby="perfilUsuarioTitulo">
+                <button id="volverUsuariosPerfil" type="button" class="btn btn-outline-secondary mb-4">
+                    <span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>
+                    Volver a Usuarios
+                </button>
+                <div class="perfil-usuario-encabezado">
+                    <img id="perfilUsuarioFoto" class="perfil-usuario-foto" alt="Foto de perfil">
+                    <div>
+                        <h1 id="perfilUsuarioTitulo"></h1>
+                        <p id="perfilUsuarioTipo"></p>
+                    </div>
+                </div>
+                <div id="perfilUsuarioDatos" class="perfil-usuario-datos"></div>
+            </section>
+
+            <section id="mascotas" class="main-section">
+                <h1>Mascotas</h1>
+                <p>Registro de mascotas, historial clínico y datos de sus dueños.</p>
+                <div class="table-responsive">
+                    <table id="datatable_mascotas" class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Especie</th>
+                                <th>Raza</th>
+                                <th>Edad</th>
+                                <th>Cliente</th>
+                                <th>Cédula</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody_mascotas" class="table-body">
+                            <tr>
+                                <td>1</td>
+                                <td>Lúa</td>
+                                <td>Canina</td>
+                                <td>Labrador</td>
+                                <td>—</td>
+                                <td>Lucía Fernández</td>
+                                <td>45678901</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Milo</td>
+                                <td>Felina</td>
+                                <td>Común europeo</td>
+                                <td>—</td>
+                                <td>Lucía Fernández</td>
+                                <td>45678901</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="formAgregarMascotaPanel" class="mt-4">
+                    <h2 class="fs-5 mb-3">Agregar mascota</h2>
+                    <form id="formMascota">
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="mascotaNombre">Nombre</label>
+                            <input type="text" class="form-control" id="mascotaNombre" name="nombre"
+                                placeholder="Nombre" aria-label="Nombre" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="mascotaEspecie">Especie</label>
+                            <select class="form-select" id="mascotaEspecie" name="especie" aria-label="Especie"
+                                required>
+                                <option value="" selected disabled>Especie</option>
+                                <option value="Canina">Canina</option>
+                                <option value="Felina">Felina</option>
+                                <option value="Ave">Ave</option>
+                                <option value="Otra">Otra</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="mascotaRaza">Raza</label>
+                            <input type="text" class="form-control" id="mascotaRaza" name="raza"
+                                placeholder="Raza" aria-label="Raza" required>
+                        </div>
+    
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="mascotaSexo">Sexo</label>
+                            <select class="form-select" id="mascotaSexo" name="sexo" aria-label="Sexo" required>
+                                <option value="" selected disabled>Sexo</option>
+                                <option value="Hembra">Hembra</option>
+                                <option value="Macho">Macho</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="mascotaTutor">Cédula del cliente</label>
+                            <input type="text" class="form-control" id="mascotaTutor" name="tutor"
+                                placeholder="Cédula del cliente" aria-label="Cédula del cliente" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Agregar mascota</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="productos" class="main-section">
+                <h1>Productos</h1>
+                <p>Control de stock y catálogo de productos del Pet Shop.</p>
+                <div class="d-flex justify-content-center mb-3">
+                    <div class="tabla-vista-toggle" role="group" aria-label="Sección visible">
+                        <button type="button" class="active" data-tabla-vista="productos" aria-pressed="true">
+                            Productos
+                        </button>
+                        <button type="button" data-tabla-vista="proveedores" aria-pressed="false">
+                            Proveedores
+                        </button>
+                    </div>
+                </div>
+                <div id="panelProveedores" class="mb-4 d-none">
+                    <button id="btnAgregarProveedor" type="button" class="btn btn-primary mb-3"
+                        data-bs-toggle="modal" data-bs-target="#modalProveedor">
+                        Agregar proveedor
+                    </button>
+                    <button id="btnCrearPedidoProveedor" type="button" class="btn btn-outline-primary mb-3 ms-2"
+                        data-bs-toggle="modal" data-bs-target="#modalPedidoProveedor">
+                        Crear pedido
+                    </button>
+                    <div class="table-responsive">
+                        <table id="datatable_proveedores" class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Producto</th>
+                                    <th>Gmail</th>
+                                    <th>Dirección</th>
+                                    <th>Departamento</th>
+                                    <th>Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody_proveedores" class="table-body"></tbody>
+                        </table>
+                    </div>
+                    <section class="pedidos-proveedor-panel" aria-labelledby="pedidosProveedorTitulo">
+                        <div class="pedidos-proveedor-heading">
+                            <div>
+                                <h2 id="pedidosProveedorTitulo">Pedidos a proveedores</h2>
+                                <p>Consulta y actualiza el estado de tus pedidos.</p>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table align-middle pedidos-proveedor-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Pedido</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Proveedor</th>
+                                        <th scope="col">Artículos</th>
+                                        <th scope="col">Total</th>
+                                        <th scope="col">Estado</th>
+                                        <th scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="pedidosProveedorRows"></tbody>
+                            </table>
+                        </div>
+                        <p id="pedidosProveedorVacio" class="pedidos-proveedor-empty" role="status">
+                            Todavía no hay pedidos. Crea uno para comenzar.
+                        </p>
+                    </section>
+                </div>
+                <div id="panelTablaProductos">
+                    <button id="btnAgregarProducto" type="button" class="btn btn-primary mb-3"
+                        data-bs-toggle="modal" data-bs-target="#modalProducto">
+                        Agregar producto
+                    </button>
+                    <div class="table-responsive">
+                        <table id="datatable_productos" class="table">
+                            <thead>
+                                <tr>
+                                    <th> </th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Descripción</th>
+                                    <th>Categoría</th>
+                                    <th>Stock</th>
+                                    <th>Proveedor</th>
+                                    <th>Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody_productos" class="table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="reportes" class="main-section">
+                <h1>Reportes</h1>
+                <p>Historial de acciones realizadas en la tienda. Estos registros no se pueden modificar.</p>
+                <div class="table-responsive">
+                    <table id="datatable_reportes" class="table table-striped table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Usuario</th>
+                                <th>Lo que hizo</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        <!-- Final sección principal-->
+
+        <!--  Inicio sección derecha-->
+        <div class="right">
+            <div class="top">
+
+                <button id="menu_bar">
+                    <span class="material-symbols-rounded">
+                        menu
+                    </span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-symbols-rounded active">
+                        light_mode
+                    </span>
+                    <span class="material-symbols-rounded">
+                        dark_mode
+                    </span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p><b>KAT0</b></p>
+                        <p>Admin</p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="imgs/Designer (1).png" alt="Foto de perfil">
+                    </div>
+                </div>
+            </div>
+            <!--Termina el top-->
+
+            <!-- Inicio reportes recientes-->
+            <div class="reportes-recientes">
+                <h2>Reportes receientes</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="https://media.tenor.com/4DgzaemGVRIAAAAM/void-eyes.gif" alt="foto de perfil-2">
+                        </div>
+                        <div class="message">
+                            <p><b>Inti</b>Lo detuvo la policia en 18 de julio</p>
+                        </div>
+                    </div>
+
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="https://media.tenor.com/4DgzaemGVRIAAAAM/void-eyes.gif" alt="foto de perfil-2">
+                        </div>
+                        <div class="message">
+                            <p><b>Inti</b>Secuestró a Pedro picapiedra</p>
+                        </div>
+                    </div>
+
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="https://media.tenor.com/4DgzaemGVRIAAAAM/void-eyes.gif" alt="foto de perfil-2">
+                        </div>
+                        <div class="message">
+                            <p><b>Inti</b>Atendió a Pedro picapiedra</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Fin reportes recientes-->
+
+            <!--Inicio Analítica de ventas-->
+            <div class="analitica-ventas">
+                <h2>Analítica de ventas</h2>
+
+                <div class="item">
+                    <div class="icon">
+                        <span class="material-symbols-rounded">
+                            trolley
+                        </span>
+                    </div>
+
+                    <div class="right_text">
+                        <div class="info">
+                            <h3>Ventas Online</h3>
+                            <small class="text-muted"> Ultimo Visto en 2 horas</small>
+                        </div>
+                        <h5 class="danger">-17%</h5>
+                        <h3>3849</h3>
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <div class="icon">
+                        <span class="material-symbols-rounded">
+                            trolley
+                        </span>
+                    </div>
+
+                    <div class="right_text">
+                        <div class="info">
+                            <h3>Ventas Online</h3>
+                            <small class="text-muted"> Ultimo Visto en 2 horas</small>
+                        </div>
+                        <h5 class="danger">-17%</h5>
+                        <h3>3849</h3>
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <div class="icon">
+                        <span class="material-symbols-rounded">
+                            trolley
+                        </span>
+                    </div>
+
+                    <div class="right_text">
+                        <div class="info">
+                            <h3>Ventas Online</h3>
+                            <small class="text-muted"> Ultimo Visto en 2 horas</small>
+                        </div>
+                        <h5 class="danger">-17%</h5>
+                        <h3>3849</h3>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <!--Fin Analítica de ventas-->
+            <div class="añadir_productos">
+                <div>
+                    <span class="material-symbols-rounded">
+                        add_2
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!--  Final sección derecha-->
+
+    </div>
+
+    <div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="modalProductoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="modalProductoLabel">Agregar producto</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formProducto">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="visually-hidden" for="productoNombre">Nombre del Producto</label>
+                                <input type="text" class="form-control" id="productoNombre" name="nombreProducto"
+                                    placeholder="Nombre del Producto" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="visually-hidden" for="productoPrecioUnitario">Precio</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" id="productoPrecioUnitario"
+                                        name="precioUnitario" placeholder="Precio" min="0" step="0.01" required>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="visually-hidden" for="productoDescripcion">Descripción</label>
+                                <textarea class="form-control" id="productoDescripcion" name="descripcion"
+                                    placeholder="Descripción" rows="3" required></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="visually-hidden" for="productoCategoria">Categoría</label>
+                                <input type="text" class="form-control" id="productoCategoria" name="categoria"
+                                    placeholder="Categoría" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="visually-hidden" for="productoStock">Stock</label>
+                                <input type="number" class="form-control" id="productoStock" name="stock"
+                                    placeholder="Stock" min="0" step="1" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="visually-hidden" for="productoIdProveedor">Proveedor</label>
+                                <input type="number" class="form-control" id="productoIdProveedor" name="idProveedor"
+                                    placeholder="Proveedor" min="1" step="1" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="visually-hidden" for="productoImagen">Imagen del Producto</label>
+                                <input type="file" class="form-control" id="productoImagen" name="imagenProducto"
+                                    accept="image/*" aria-label="Adjuntar imagen del producto">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" form="formProducto" class="btn btn-primary">Agregar producto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalProveedor" tabindex="-1" aria-labelledby="modalProveedorLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="modalProveedorLabel">Agregar proveedor</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formProveedor">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="visually-hidden" for="proveedorNombre">Nombre del proveedor</label>
+                                <input type="text" class="form-control" id="proveedorNombre" name="nombre"
+                                    placeholder="Nombre del proveedor" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="visually-hidden" for="proveedorProducto">Producto</label>
+                                <input type="text" class="form-control" id="proveedorProducto" name="producto"
+                                    placeholder="Producto que provee" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="visually-hidden" for="proveedorGmail">Correo electrónico</label>
+                                <input type="email" class="form-control" id="proveedorGmail" name="gmail"
+                                    placeholder="Correo electrónico" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="visually-hidden" for="proveedorDireccion">Dirección</label>
+                                <input type="text" class="form-control" id="proveedorDireccion" name="direccion"
+                                    placeholder="Dirección" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="visually-hidden" for="proveedorDepartamento">Departamento</label>
+                                <input type="text" class="form-control" id="proveedorDepartamento" name="departamento"
+                                    placeholder="Departamento" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" form="formProveedor" class="btn btn-primary">Agregar proveedor</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPedidoProveedor" tabindex="-1" aria-labelledby="modalPedidoProveedorLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="modalPedidoProveedorLabel">Crear pedido a proveedor</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formPedidoProveedor">
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label" for="pedidoProveedor">Proveedor</label>
+                                <select class="form-select" id="pedidoProveedor" required>
+                                    <option value="">Selecciona un proveedor</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="pedidoFechaEntrega">Fecha estimada de entrega</label>
+                                <input class="form-control" type="date" id="pedidoFechaEntrega">
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                            <h3 class="mb-0">Productos del pedido</h3>
+                            <button type="button" class="btn btn-sm btn-outline-primary" id="pedidoAgregarArticulo">
+                                Agregar producto
+                            </button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table align-middle pedido-articulos-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Producto</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Precio unitario</th>
+                                        <th scope="col">Subtotal</th>
+                                        <th scope="col"><span class="visually-hidden">Acciones</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="pedidoArticulos"></tbody>
+                            </table>
+                        </div>
+                        <p class="text-end fs-5 fw-semibold mb-3">
+                            Total: <span id="pedidoTotal">$ 0</span>
+                        </p>
+                        <label class="form-label" for="pedidoNotas">Notas</label>
+                        <textarea class="form-control" id="pedidoNotas" rows="2"
+                            placeholder="Instrucciones adicionales para el proveedor (opcional)"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" form="formPedidoProveedor" class="btn btn-primary">Guardar pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEditarFila" tabindex="-1" aria-labelledby="modalEditarFilaLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="modalEditarFilaLabel">Modificar registro</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formEditarFila">
+                        <div id="camposEditarFila" class="row g-3"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" form="formEditarFila" class="btn btn-primary">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalMascotaCliente" tabindex="-1" aria-labelledby="modalMascotaClienteLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="modalMascotaClienteLabel">Agregar mascota</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formMascotaCliente">
+                        <div id="mascotasClienteContainer">
+                            <div class="mascota-cliente-entry">
+                                <h3 class="mascota-cliente-title mb-3">Mascota 1</h3>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteMascotaNombre">Nombre</label>
+                            <input type="text" class="form-control" id="clienteMascotaNombre" name="nombreMascota"
+                                placeholder="Nombre" aria-label="Nombre de la mascota" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteMascotaEspecie">Especie</label>
+                            <select class="form-select" id="clienteMascotaEspecie" name="especieMascota"
+                                aria-label="Especie" required>
+                                <option value="" selected disabled>Especie</option>
+                                <option value="Canina">Canina</option>
+                                <option value="Felina">Felina</option>
+                                <option value="Ave">Ave</option>
+                                <option value="Otra">Otra</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteMascotaRaza">Raza</label>
+                            <input type="text" class="form-control" id="clienteMascotaRaza" name="razaMascota"
+                                placeholder="Raza" aria-label="Raza" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="visually-hidden" for="clienteMascotaSexo">Sexo</label>
+                            <select class="form-select" id="clienteMascotaSexo" name="sexoMascota"
+                                aria-label="Sexo" required>
+                                <option value="" selected disabled>Sexo</option>
+                                <option value="Hembra">Hembra</option>
+                                <option value="Macho">Macho</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label class="visually-hidden" for="clienteMascotaTutor">Cédula del tutor</label>
+                            <input type="text" class="form-control" id="clienteMascotaTutor" name="tutorMascota"
+                                placeholder="Cédula del tutor" aria-label="Cédula del tutor" required>
+                        </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-outline-primary mt-3" id="agregarOtraMascota">
+                            <span class="material-symbols-rounded">add</span>
+                            Agregar otra mascota
+                        </button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" form="formMascotaCliente" class="btn btn-primary">Agregar mascota</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalCita" tabindex="-1" aria-labelledby="modalCitaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="modalCitaLabel">Agendar cita</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formCita">
+                        <div class="mb-3">
+                            <label class="visually-hidden" for="citaCliente">CI del cliente</label>
+                            <input type="text" class="form-control" id="citaCliente" name="ci"
+                                placeholder="CI del cliente" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="visually-hidden" for="citaMascota">Nombre de la Mascota</label>
+                            <input type="text" class="form-control" id="citaMascota" name="mascota"
+                                placeholder="Nombre de la Mascota" required>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-sm-6">
+                                <label class="visually-hidden" for="citaFecha">Fecha</label>
+                                <input type="date" class="form-control" id="citaFecha" name="fecha"
+                                    aria-label="Fecha" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="visually-hidden" for="citaHora">Hora</label>
+                                <input type="time" class="form-control" id="citaHora" name="hora"
+                                    aria-label="Hora" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="visually-hidden" for="citaServicio">ID del servicio</label>
+                            <input type="text" class="form-control" id="citaServicio" name="serviceId"
+                                placeholder="ID del servicio" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="visually-hidden" for="citaEstado">Estado de la cita</label>
+                            <select class="form-select" id="citaEstado" name="estado" aria-label="Estado de la cita"
+                                required>
+                                <option value="En espera" selected>En espera</option>
+                                <option value="Activo">Activo</option>
+                                <option value="Terminado">Terminado</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="visually-hidden" for="citaMotivo">Motivo de la cita</label>
+                            <textarea class="form-control" id="citaMotivo" name="motivo"
+                                placeholder="Motivo de la cita" rows="3"></textarea>
+                        </div>
+                        <p class="small text-muted d-none" id="citaFormularioInfo" role="status">
+                            La cita se agregó al calendario.
+                        </p>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" form="formCita" class="btn btn-primary">Agendar cita</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- DataTables -->
+    <script src="https://cdn.datatables.net/3.1.2/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/3.1.2/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- Tu JS -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
